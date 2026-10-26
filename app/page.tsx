@@ -10,7 +10,6 @@ import {
   Zap,
 } from "lucide-react";
 
-
 const services = [
   {
     number: "01",
@@ -92,7 +91,10 @@ function Brand() {
 
 function GasCylinder() {
   return (
-    <div className="hero-visual" aria-label="Illustration of a green gas cylinder">
+    <div
+      className="hero-visual"
+      aria-label="Illustration of a green gas cylinder"
+    >
       <div className="cylinder">
         <div className="cylinder-neck" />
         <div className="cylinder-band" />
@@ -208,7 +210,7 @@ export default function Home() {
               </div>
               <h2>Everything starts with the right service.</h2>
               <p>
-                Whether you're planning your next refill or looking for gas
+                Whether you&apos;re planning your next refill or looking for gas
                 essentials, start by finding what you need.
               </p>
             </div>
@@ -222,7 +224,10 @@ export default function Home() {
                     <div className="service-icon">
                       <Icon size={25} strokeWidth={1.8} />
                     </div>
-                    <div className="eyebrow" style={{ marginTop: 22, marginBottom: 0 }}>
+                    <div
+                      className="eyebrow"
+                      style={{ marginTop: 22, marginBottom: 0 }}
+                    >
                       SERVICE {service.number}
                     </div>
                     <h3>{service.title}</h3>
@@ -274,8 +279,8 @@ export default function Home() {
               <h2>Less confusion. More confidence.</h2>
 
               <p>
-                Getting your everyday gas essentials shouldn't feel
-                complicated. We're shaping a customer experience that puts
+                Getting your everyday gas essentials shouldn&apos;t feel
+                complicated. We&apos;re shaping a customer experience that puts
                 clarity, convenience and responsible gas use first.
               </p>
 
@@ -320,7 +325,7 @@ export default function Home() {
                   <Flame size={24} />
                 </div>
                 <h3>A gas refill</h3>
-                <p>I'm planning my next cooking gas refill.</p>
+                <p>I&apos;m planning my next cooking gas refill.</p>
                 <span className="text-link">
                   Explore refills <ArrowRight size={15} />
                 </span>
@@ -331,7 +336,7 @@ export default function Home() {
                   <PackageCheck size={24} />
                 </div>
                 <h3>Gas equipment</h3>
-                <p>I'm looking for cylinders or useful accessories.</p>
+                <p>I&apos;m looking for cylinders or useful accessories.</p>
                 <span className="text-link">
                   Explore essentials <ArrowRight size={15} />
                 </span>
@@ -342,7 +347,9 @@ export default function Home() {
                   <Headphones size={24} />
                 </div>
                 <h3>Some assistance</h3>
-                <p>I need information about gas services or support.</p>
+                <p>
+                  I need information about gas services or support.
+                </p>
                 <span className="text-link">
                   Get in touch <ArrowRight size={15} />
                 </span>
@@ -357,9 +364,11 @@ export default function Home() {
               <div>
                 <div className="eyebrow" style={{ color: "#c8f169" }}>
                   <span className="eyebrow-dot" />
-                  LET'S GET YOU STARTED
+                  LET&apos;S GET YOU STARTED
                 </div>
-                <h2>Your everyday gas needs deserve a simpler experience.</h2>
+                <h2>
+                  Your everyday gas needs deserve a simpler experience.
+                </h2>
                 <p>
                   Have a question or want to learn more about Gas4You? Start
                   here.
