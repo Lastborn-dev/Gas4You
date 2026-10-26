@@ -365,7 +365,7 @@ export default function Home() {
               <h2>Less confusion. More confidence.</h2>
 
               <p>
-                Getting your everyday gas essentials shouldn't feel
+                Getting your everyday gas essentials shouldn&apos;t feel
                 complicated. Gas4You aims to make it easier to explore
                 products, ask questions and plan your next step.
               </p>
@@ -412,7 +412,7 @@ export default function Home() {
                 </div>
                 <h3>A gas refill</h3>
                 <p>
-                  I'm planning my next cooking gas refill.
+                  I&apos;m planning my next cooking gas refill.
                 </p>
                 <span className="text-link">
                   Browse gas options <ArrowRight size={15} />
@@ -425,7 +425,7 @@ export default function Home() {
                 </div>
                 <h3>Gas equipment</h3>
                 <p>
-                  I'm looking for cylinders or useful accessories.
+                  I&apos;m looking for cylinders or useful accessories.
                 </p>
                 <span className="text-link">
                   Browse products <ArrowRight size={15} />
@@ -454,7 +454,7 @@ export default function Home() {
               <div>
                 <div className="eyebrow" style={{ color: "#c8f169" }}>
                   <span className="eyebrow-dot" />
-                  LET'S GET YOU STARTED
+                  LET&apos;S GET YOU STARTED
                 </div>
                 <h2>
                   Your everyday gas needs deserve a simpler experience.
