@@ -1,19 +1,15 @@
 
 import {
-  ArrowDownRight,
   ArrowRight,
   Check,
-  ChevronRight,
-  Clock3,
   Flame,
   Headphones,
-  MapPin,
   PackageCheck,
   ShieldCheck,
-  Truck,
   Wrench,
   Zap,
 } from "lucide-react";
+
 
 const services = [
   {
