@@ -10,51 +10,76 @@ import {
   Zap,
 } from "lucide-react";
 
+const email = "adedapoadedamola3@gmail.com";
+
 const services = [
   {
     number: "01",
     title: "Gas refills",
     description:
-      "Running low? Explore a simpler way to plan your next cooking gas refill.",
+      "Running low? Explore gas refill options for your home.",
     icon: Flame,
-    link: "#get-started",
+    link: "#gas-listings",
   },
   {
     number: "02",
     title: "Cylinders & accessories",
     description:
-      "Discover the essentials that help make your kitchen ready for everyday cooking.",
+      "Explore cylinder sizes and essential cooking gas equipment.",
     icon: PackageCheck,
-    link: "#get-started",
+    link: "#gas-listings",
   },
   {
     number: "03",
     title: "Technical services",
     description:
-      "Looking for installation or gas-related support? Find out how we can help.",
+      "Need installation advice or gas-related support? Contact us.",
     icon: Wrench,
     link: "#contact",
+  },
+];
+
+const products = [
+  {
+    size: "3kg",
+    name: "3kg Gas Cylinder",
+    description: "A compact option for smaller cooking needs.",
+  },
+  {
+    size: "6kg",
+    name: "6kg Gas Cylinder",
+    description: "A practical size to ask about for everyday cooking.",
+  },
+  {
+    size: "12.5kg",
+    name: "12.5kg Gas Cylinder",
+    description: "A larger option for regular household cooking.",
+  },
+  {
+    size: "25kg",
+    name: "25kg Gas Cylinder",
+    description: "Ask our team whether this size suits your needs.",
   },
 ];
 
 const steps = [
   {
     number: "01",
-    title: "Tell us what you need",
+    title: "Choose what you need",
     description:
-      "Start with the service you're looking for and the area you live in.",
+      "Explore gas cylinders, refill enquiries and other services.",
   },
   {
     number: "02",
-    title: "Explore your options",
+    title: "Contact our team",
     description:
-      "Find out which products or services may be suitable for your needs.",
+      "Tell us what you need and confirm availability and pricing.",
   },
   {
     number: "03",
-    title: "Take the next step",
+    title: "Arrange your next step",
     description:
-      "Get in touch to discuss the details before arranging your service.",
+      "Discuss delivery or service arrangements with our team.",
   },
 ];
 
@@ -67,12 +92,12 @@ const benefits = [
   {
     title: "Safety matters",
     description:
-      "Gas equipment and installation should always be handled responsibly by qualified professionals.",
+      "Gas equipment should always be handled responsibly by qualified professionals.",
   },
   {
     title: "Help when you need it",
     description:
-      "Make it easier to understand your options and know where to start.",
+      "Contact our team to ask questions and understand your options.",
   },
 ];
 
@@ -146,12 +171,13 @@ export default function Home() {
 
           <div className="nav-links">
             <a href="#services">Our services</a>
+            <a href="#gas-listings">Gas listings</a>
             <a href="#how-it-works">How it works</a>
-            <a href="#why-us">Why Gas4You</a>
             <a href="#contact">Contact</a>
+            <a href="/login">Customer login</a>
           </div>
 
-          <a className="button" href="#get-started">
+          <a className="button" href="#gas-listings">
             Get started <ArrowRight size={16} />
           </a>
         </nav>
@@ -171,14 +197,13 @@ export default function Home() {
               </h1>
 
               <p className="hero-copy">
-                From everyday cooking gas needs to essential accessories and
-                technical support, discover a simpler way to get started with
-                Gas4You.
+                Explore gas cylinders, plan your next refill and discover
+                essential services with Gas4You.
               </p>
 
               <div className="hero-actions">
-                <a href="#services" className="button button-lime">
-                  Explore our services <ArrowRight size={17} />
+                <a href="#gas-listings" className="button button-lime">
+                  Explore gas listings <ArrowRight size={17} />
                 </a>
                 <a href="#how-it-works" className="button button-outline">
                   How it works
@@ -210,8 +235,8 @@ export default function Home() {
               </div>
               <h2>Everything starts with the right service.</h2>
               <p>
-                Whether you&apos;re planning your next refill or looking for gas
-                essentials, start by finding what you need.
+                Find the service you need, explore your options and contact
+                our team for more information.
               </p>
             </div>
 
@@ -224,16 +249,19 @@ export default function Home() {
                     <div className="service-icon">
                       <Icon size={25} strokeWidth={1.8} />
                     </div>
+
                     <div
                       className="eyebrow"
                       style={{ marginTop: 22, marginBottom: 0 }}
                     >
                       SERVICE {service.number}
                     </div>
+
                     <h3>{service.title}</h3>
                     <p>{service.description}</p>
+
                     <a className="text-link" href={service.link}>
-                      Learn more <ArrowRight size={15} />
+                      Explore service <ArrowRight size={15} />
                     </a>
                   </article>
                 );
@@ -242,7 +270,65 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section" id="how-it-works">
+        <section className="section" id="gas-listings">
+          <div className="container">
+            <div className="section-heading">
+              <div className="eyebrow">
+                <span className="eyebrow-dot" />
+                GAS PRODUCTS
+              </div>
+              <h2>Find the right gas option for your home.</h2>
+              <p>
+                Browse common cylinder sizes and contact us to confirm
+                current availability and prices before ordering.
+              </p>
+            </div>
+
+            <div className="services-grid">
+              {products.map((product) => (
+                <article className="service-card" key={product.size}>
+                  <div className="service-icon">
+                    <Flame size={25} />
+                  </div>
+
+                  <div
+                    className="eyebrow"
+                    style={{ marginTop: 22, marginBottom: 0 }}
+                  >
+                    CYLINDER SIZE · {product.size}
+                  </div>
+
+                  <h3>{product.name}</h3>
+                  <p>{product.description}</p>
+
+                  <a
+                    className="text-link"
+                    href={`mailto:${email}?subject=${encodeURIComponent(
+                      `Gas4You enquiry: ${product.name}`
+                    )}`}
+                  >
+                    Ask about availability <ArrowRight size={15} />
+                  </a>
+                </article>
+              ))}
+            </div>
+
+            <p
+              style={{
+                marginTop: 24,
+                color: "#68736a",
+                fontSize: 12,
+                textAlign: "center",
+                lineHeight: 1.8,
+              }}
+            >
+              Product sizes shown are examples. Please contact us to confirm
+              stock, refill options and current prices.
+            </p>
+          </div>
+        </section>
+
+        <section className="section section-white" id="how-it-works">
           <div className="container">
             <div className="section-heading">
               <div className="eyebrow">
@@ -251,8 +337,8 @@ export default function Home() {
               </div>
               <h2>A clearer path from need to next step.</h2>
               <p>
-                No complicated process. Just a simple starting point for your
-                gas needs.
+                Start with what you need and let our team help you understand
+                the next steps.
               </p>
             </div>
 
@@ -268,7 +354,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section section-white" id="why-us">
+        <section className="section" id="why-us">
           <div className="container benefits-grid">
             <div className="split-copy">
               <div className="eyebrow">
@@ -279,13 +365,13 @@ export default function Home() {
               <h2>Less confusion. More confidence.</h2>
 
               <p>
-                Getting your everyday gas essentials shouldn&apos;t feel
-                complicated. We&apos;re shaping a customer experience that puts
-                clarity, convenience and responsible gas use first.
+                Getting your everyday gas essentials shouldn't feel
+                complicated. Gas4You aims to make it easier to explore
+                products, ask questions and plan your next step.
               </p>
 
-              <a href="#contact" className="button">
-                Find out more <ArrowRight size={16} />
+              <a href="#gas-listings" className="button">
+                Explore products <ArrowRight size={16} />
               </a>
             </div>
 
@@ -305,7 +391,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section" id="get-started">
+        <section className="section section-white" id="get-started">
           <div className="container">
             <div className="section-heading">
               <div className="eyebrow">
@@ -314,35 +400,39 @@ export default function Home() {
               </div>
               <h2>What do you need today?</h2>
               <p>
-                Choose a starting point and explore the service that best
-                matches your needs.
+                Choose an option below to explore products or contact our
+                team directly.
               </p>
             </div>
 
             <div className="services-grid">
-              <a className="service-card" href="#services">
+              <a className="service-card" href="#gas-listings">
                 <div className="service-icon">
                   <Flame size={24} />
                 </div>
                 <h3>A gas refill</h3>
-                <p>I&apos;m planning my next cooking gas refill.</p>
+                <p>
+                  I'm planning my next cooking gas refill.
+                </p>
                 <span className="text-link">
-                  Explore refills <ArrowRight size={15} />
+                  Browse gas options <ArrowRight size={15} />
                 </span>
               </a>
 
-              <a className="service-card" href="#services">
+              <a className="service-card" href="#gas-listings">
                 <div className="service-icon">
                   <PackageCheck size={24} />
                 </div>
                 <h3>Gas equipment</h3>
-                <p>I&apos;m looking for cylinders or useful accessories.</p>
+                <p>
+                  I'm looking for cylinders or useful accessories.
+                </p>
                 <span className="text-link">
-                  Explore essentials <ArrowRight size={15} />
+                  Browse products <ArrowRight size={15} />
                 </span>
               </a>
 
-              <a className="service-card" href="#contact">
+              <a className="service-card" href={`mailto:${email}`}>
                 <div className="service-icon">
                   <Headphones size={24} />
                 </div>
@@ -351,7 +441,7 @@ export default function Home() {
                   I need information about gas services or support.
                 </p>
                 <span className="text-link">
-                  Get in touch <ArrowRight size={15} />
+                  Contact our team <ArrowRight size={15} />
                 </span>
               </a>
             </div>
@@ -364,20 +454,29 @@ export default function Home() {
               <div>
                 <div className="eyebrow" style={{ color: "#c8f169" }}>
                   <span className="eyebrow-dot" />
-                  LET&apos;S GET YOU STARTED
+                  LET'S GET YOU STARTED
                 </div>
                 <h2>
                   Your everyday gas needs deserve a simpler experience.
                 </h2>
                 <p>
-                  Have a question or want to learn more about Gas4You? Start
-                  here.
+                  Have a question about Gas4You? Send us an email and our
+                  team can help you with your enquiry.
+                </p>
+                <p>
+                  Email:{" "}
+                  <a
+                    href={`mailto:${email}`}
+                    style={{ color: "#c8f169", fontWeight: 700 }}
+                  >
+                    {email}
+                  </a>
                 </p>
               </div>
 
               <a
                 className="button button-lime"
-                href="mailto:hello@gas4you.example?subject=Gas4You%20enquiry"
+                href={`mailto:${email}?subject=Gas4You%20enquiry`}
               >
                 Contact us <ArrowRight size={17} />
               </a>
@@ -393,21 +492,21 @@ export default function Home() {
               <Brand />
               <p className="footer-description">
                 A simpler starting point for everyday cooking gas needs,
-                equipment and technical service enquiries.
+                equipment and service enquiries.
               </p>
             </div>
 
             <div className="footer-column">
               <h4>EXPLORE</h4>
               <a href="#services">Our services</a>
+              <a href="#gas-listings">Gas listings</a>
               <a href="#how-it-works">How it works</a>
-              <a href="#why-us">Why Gas4You</a>
             </div>
 
             <div className="footer-column">
               <h4>GET IN TOUCH</h4>
-              <a href="#contact">Contact us</a>
-              <a href="#get-started">Get started</a>
+              <a href={`mailto:${email}`}>Email us</a>
+              <a href="/login">Customer login</a>
               <a href="#home">Back to top ↑</a>
             </div>
           </div>
@@ -416,7 +515,9 @@ export default function Home() {
             <span>
               © {new Date().getFullYear()} Gas4You. All rights reserved.
             </span>
-            <span>Built around simplicity, convenience and safety.</span>
+            <span>
+              Built around simplicity, convenience and safety.
+            </span>
           </div>
         </div>
       </footer>
