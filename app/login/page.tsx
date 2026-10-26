@@ -1,7 +1,9 @@
+
 "use client";
 
 import { useState, type FormEvent } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 import {
   ArrowLeft,
   ArrowRight,
@@ -126,7 +128,7 @@ export default function LoginPage() {
           boxShadow: "0 24px 70px rgba(23, 61, 34, 0.09)",
         }}
       >
-        <a
+        <Link
           href="/"
           style={{
             display: "inline-flex",
@@ -139,7 +141,7 @@ export default function LoginPage() {
         >
           <ArrowLeft size={16} />
           Back to Gas4You
-        </a>
+        </Link>
 
         <div
           style={{
@@ -218,6 +220,7 @@ export default function LoginPage() {
               >
                 Full name
               </label>
+
               <div style={{ position: "relative" }}>
                 <UserRound
                   size={17}
@@ -228,6 +231,7 @@ export default function LoginPage() {
                     color: "#879487",
                   }}
                 />
+
                 <input
                   id="full-name"
                   type="text"
@@ -248,6 +252,7 @@ export default function LoginPage() {
           >
             Email address
           </label>
+
           <div style={{ position: "relative" }}>
             <Mail
               size={17}
@@ -258,6 +263,7 @@ export default function LoginPage() {
                 color: "#879487",
               }}
             />
+
             <input
               id="email"
               type="email"
@@ -276,6 +282,7 @@ export default function LoginPage() {
           >
             Password
           </label>
+
           <div style={{ position: "relative" }}>
             <LockKeyhole
               size={17}
@@ -286,6 +293,7 @@ export default function LoginPage() {
                 color: "#879487",
               }}
             />
+
             <input
               id="password"
               type={showPassword ? "text" : "password"}
@@ -301,6 +309,7 @@ export default function LoginPage() {
                 paddingRight: 45,
               }}
             />
+
             <button
               type="button"
               onClick={() => setShowPassword(!showPassword)}
@@ -377,6 +386,7 @@ export default function LoginPage() {
           }}
         >
           {isSignup ? "Already have an account? " : "New to Gas4You? "}
+
           <button
             type="button"
             onClick={() => {
@@ -415,6 +425,7 @@ export default function LoginPage() {
           >
             Contact Gas4You support
           </a>
+
           <p style={{ margin: "12px 0 0" }}>
             © {new Date().getFullYear()} Gas4You. All rights reserved.
           </p>
@@ -423,4 +434,3 @@ export default function LoginPage() {
     </main>
   );
 }
-
